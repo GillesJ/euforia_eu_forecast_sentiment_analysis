@@ -27,8 +27,10 @@ def clean_dataset(df):
     df = df.where(mask, other=np.nan)
     # ensure text are strings, no text = remove
     df["text"].astype(str)
+    # convert empty values and "None" strings to NaN
+    df = df.replace('None', np.nan)
     # drop rows containing nan
-    df = df.dropna(axis=0, subset=["date", "state", "text"])
+    df = df.dropna(axis=0, subset=["date", "state", "text"]).reset_index(drop=True)
     # convert date field to datetime
     df["date"] = pd.to_datetime(df["date"])
     # clean text

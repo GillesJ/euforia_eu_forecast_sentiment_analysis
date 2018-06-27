@@ -16,8 +16,17 @@ Install:
 `pipenv install` and then to use the virtualenv run `pipenv shell`
 - Lexicoder 3.0 for Lexicoder political text sentiment analysis: download from lexicoder site and follow manual instructions.
 
-
 ## Usage
+Lexicoder political sentiment SA:
+- Install Lexicoder software from their site.
+- Download the Lexicoder political lexicon from site.
+- Set dirs in settings. Clean and make the data directory: `python lexicoder.py`
+- `cd "/home/gilles/software/Lexicoder 3.0"`
+- Preprocess: `./lex pre dat="./dat/"`
+- Lexicon count: `./lex dc dat="./dat/" md="/home/gilles/datasets/LexicoderSADaug2015/LSD2015.lc3" > /home/gilles/repos/euforia_eu_forecast_sentiment_analysis/dataset/lexicoder_counts.tsv`
+- Annotation HTML file for manual inspection: `./lex tag dat="./dat/" md="/home/gilles/datasets/LexicoderSADaug2015/LSD2015.lc3" > /home/gilles/repos/euforia_eu_forecast_sentiment_analysis/dataset/lexicoder.html`
+
+Package files:
 - `./sentiment_analysis/settings.py`: Set in/output paths, analyser settings. Set FROM_SCRATCH to True to run sentiment analysis from scratch.
 - `./sentiment_analysis/sentimentanalyser.py`: Run analysis and plotting.
 - `./sentiment_analysis/preprocessor.py`: Functions for text preprocessing.
@@ -37,8 +46,9 @@ Install:
 | Strong Modal Words | 19 |	always, highest, must, will |
 
 ## TODO:
-- Implement Lexicoder political sentiment lexicon scoring
-- Research more sentiment lexicons (political discourse could be useful)
+- ~~Implement Lexicoder political sentiment lexicon scoring~~
+- ~~Research more sentiment lexicons (political discourse could be useful)~~
+- Add final SA lexicon for general purpose: Wordstat
 - Combine results: scale scores, take into account subjectivity score in linear combination + use a voting or linear combination at document.
 
 

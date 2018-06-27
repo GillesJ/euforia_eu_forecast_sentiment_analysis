@@ -8,6 +8,7 @@ pandas = "*"
 sklearn = "*"
 matplotlib = "*"
 pysentiment = {git = "https://github.com/hanzhichao2000/pysentiment/"}
+scipy = "*"
 
 [dev-packages]
 
