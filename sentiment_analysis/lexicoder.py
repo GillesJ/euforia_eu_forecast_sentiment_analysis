@@ -12,7 +12,7 @@ import pandas as pd
 
 def add_lexicoder(df):
     try:
-        lexicoder_df = datahandler.read_data(settings.LEXICODER_COUNT_FP)
+        lexicoder_df = datahandler.read_data(settings.LEXICODER_COUNT_FP, sep="\t")
     except Exception as e:
         print(e, "Ensure you have run seperate Lexicoder 3.0 dictionary count cf. Usage.")
 

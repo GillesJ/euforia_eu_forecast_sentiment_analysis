@@ -45,5 +45,5 @@ def write_data(df, fp):
         print(e, f"Failed to write dataframe to {fp}.")
 
 
-def read_data(fp):
-    return pd.read_csv(fp, sep="\t")
+def read_data(fp, sep=None):
+    return pd.read_csv(fp, sep=sep)

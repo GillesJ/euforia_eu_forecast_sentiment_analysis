@@ -36,11 +36,14 @@ def plot_state_polarity(df):
     mean.name, std.name = f"mean_{mean.name}", f"std_{std.name}"
     df_error = pd.concat([mean, std], axis=1)
     df_error[mean.name].plot(fmt='ro', yerr=df_error[std.name], grid='on')
+    states = list(df.groupby('state').groups.keys())
+    tick_marks = np.arange(len(states))
+    plt.pyplot.xticks(tick_marks, states, rotation=90)
     plt.pyplot.show()
-    pass
 
 
 def weight_subjectivity(df):
+
     columns_to_weight = [c for c in df.columns if "polarity" in c]
     weight_columns = [c for c in df.columns if "subjectivity" in c]
     for c_pol, c_subj in zip(columns_to_weight, weight_columns):
