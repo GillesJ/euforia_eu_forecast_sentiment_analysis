@@ -5,7 +5,7 @@ certifi==2018.4.16
 cffi==1.11.5
 chardet==3.0.4
 clint==0.5.1
-cryptography==2.2.2
+cryptography==3.2
 demjson==2.2.4
 fudge==1.1.1
 idna==2.6
